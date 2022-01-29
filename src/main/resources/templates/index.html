@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      
+	<head>
+		<title>Show do Milhão</title>
+	</head>
+	
+	<body>
+		<h1>Lista de questões</h1>
+		<h3><a href="/iniciarQuestao">Questionário</a></h3>
+	
+		<div th:each="questao : ${listaQuestao}">
+			<div class="row">
+				<p><span th:text="${questao.id}"></span></p>
+				<p><span th:text="${questao.descricao}"></span></p>
+				<p><span th:text="${questao.grau}"></span></p>
+			</div>
+		</div>
+		
+	
+	</body>
+
+</html>
