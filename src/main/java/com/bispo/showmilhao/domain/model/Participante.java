@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,11 +30,12 @@ public class Participante implements Serializable {
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 private Long id;
 
-	 @NotBlank
+	 @NotBlank(message = "Name cannot be empty")
 	 @Size(max = 60)
 	 private String nome;
 
 	 @NotNull
+	 @JsonFormat(pattern="yyyy-MM-dd HH:mm")
 	 private LocalDateTime dataJogo;
 	 
 	 @NotNull

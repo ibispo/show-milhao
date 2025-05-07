@@ -22,14 +22,12 @@ public class QuestaoController {
 	
 	@GetMapping("/ola")
 	public String helloWorld() {
-		return "Welcome to Million Show. Here, you don't gain anything, but knowledge, witch has more value than money.";
+		return "Welcome to Million Show. Here, you don't gain anything, but knowledge, which has more value than money.";
 	}	
 	
 	@GetMapping("/{questaoId}")
 	public ResponseEntity<Questao> obter(@PathVariable(name = "questaoId") Long id) {
-		
 		Optional<Questao> questaoOp = questaoRepository.findById(id);
-		
 		return questaoOp
 				.map(ResponseEntity::ok)                
 				.orElse(ResponseEntity.notFound().build());
