@@ -41,4 +41,8 @@ public class ParticipanteController {
 		return participanteService.listarPorNomeContem(participantePesquisa.getNome());
 	}
 	
+	public void x() {
+		
+	}
+	
 }
